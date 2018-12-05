@@ -1,11 +1,13 @@
-Demo练习项目（简易宠物日用商店）
+## JavaWeb  Demo练习项目（简易宠物日用商店）
 ---
+
 本项目为个人练习项目<br>
 IDE：Eclipse<br>
 项目位置：https://github.com/BigDogLin/PracticeProgram_Demo<br>
-项目技术：SSM框架、HTML+CSS、JSP、PageHelper插件、maven<br>
+项目技术：SSM框架、HTML+CSS、JSP、PageHelper插件、Maven、Tomcat<br>
 数据库：MySql<br>
 项目主要功能：购物车、商品名称模糊搜索、商品分类展示、登陆<br>
+
 ---
 ## 网页图片展示:
 **Eclipse项目结构:**<br><br>
