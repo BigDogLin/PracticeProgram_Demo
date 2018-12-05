@@ -21,6 +21,8 @@ public class UserController {
 	@Autowired
 	private UserService userservice;
 	
+	@RequestMapping("/")
+	public void firstPage() {}
 	
 	@RequestMapping(value="/checklogin", method=RequestMethod.POST)
 	public String login(@RequestParam("account")String account, 
