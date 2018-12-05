@@ -12,13 +12,13 @@
 		<div class="nav1">
 			<div class="nav2">
 				<ul style="float:left;">
-					<li><a href="index">首页</a></li>
+					<li><a href="${pageContext.request.contextPath}/index">首页</a></li>
 					<li><a href="#">其它</a></li>
 				</ul>
 				<ul style="float:right;">
 					<li><a href="#"><span class="un">${sessionScope.user.name}</span></a></li>
-					<li><a href="logout">账户注销</a></li>
-					<li><a href="cart">购物车</a></li>
+					<li><a href="${pageContext.request.contextPath}/logout">账户注销</a></li>
+					<li><a href="${pageContext.request.contextPath}/cart">购物车</a></li>
 				</ul>
 			</div>
 		</div>
