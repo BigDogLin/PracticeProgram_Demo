@@ -1,0 +1,27 @@
+.main {
+margin:60px auto;
+text-align:center;
+background:white;
+width:450px;
+height:500px;
+}
+.header {
+font-size:45px;
+font-weight:500px;
+height:70px;
+color:orange;
+}
+.banner {
+font-size:20px;
+height:50px;
+}
+.content button {
+width:200px;
+height:35px;
+background:#0084ff;
+color:white;
+}
+.content form input {
+width:200px;
+height:25px;
+}

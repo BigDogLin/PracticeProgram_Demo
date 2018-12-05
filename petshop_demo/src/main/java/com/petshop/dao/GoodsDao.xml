@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.petshop.dao.GoodsDao">
+	<select id="queryAllGoods" parameterType="com.petshop.pojo.Goods" resultMap="findGoodsMap">
+		SELECT g_id, g_name, price, introd, img, category FROM goods
+	</select>
+	
+	<select id="queryGoodsByCategory" parameterType="String" resultMap="findGoodsMap">
+		SELECT g_id, g_name, price, introd, img, category FROM goods
+		WHERE category = #{category}
+	</select>
+	
+	<select id="queryGoodsByName" parameterType="String" resultMap="findGoodsMap">
+	 	SELECT g_id, g_name, price, introd, img, category FROM goods
+	 	WHERE g_name LIKE CONCAT('%', #{name}, '%')
+	</select>
+	
+	<resultMap id="findGoodsMap" type="com.petshop.pojo.Goods">
+		<result property="id" column="g_id"/>
+		<result property="name" column="g_name"/>
+		<result property="price" column="price"/>
+		<result property="introd" column="introd"/>
+		<result property="img" column="img"/>
+		<result property="category" column="category"/>
+	</resultMap>
+	
+	
+	
+</mapper>

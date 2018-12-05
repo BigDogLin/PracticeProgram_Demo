@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.petshop.dao.UserDao">
+	
+	<select id="queryUserByAccount" parameterType="string" resultType="com.petshop.pojo.User">
+    	SELECT u_account, u_password FROM user WHERE u_account = #{account}
+	</select>
+	<!--  
+	<resultMap type="com.petshop.pojo.User" id="userRm">
+		<result property="name" column="string"/>
+		<result property="password" column="string"/>
+	</resultMap>
+	-->
+</mapper>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.petshop.dao.CartDao">
+	
+	<select id="selectCartByUserId" parameterType="Integer" resultMap="selectCartMap">
+    	SELECT cart.goodsid, cart.quantity, goods.g_name, price, introd, img,category 
+    	FROM cart, goods 
+    	WHERE userid = #{userId} AND cart.goodsid = goods.g_id
+	</select>
+	
+	<resultMap type="com.petshop.pojo.Cart" id="selectCartMap">
+		<result property="goodsId" column="goodsid"/>
+		<result property="userId" column="userid"/>
+		<result property="name" column="g_name"/>
+		<result property="price" column="price"/>
+		<result property="introd" column="introd"/>
+		<result property="img" column="img"/>
+		<result property="quantity" column="quantity"/>
+		<result property="category" column="category"/>
+	</resultMap>
+	 
+	<insert id="addGoods" >
+		INSERT INTO cart (goodsid, userid, quantity) VALUES (#{goodsId}, #{userId}, 1)
+	</insert>
+	
+	<delete id="deleteGoods">
+		DELETE FROM cart WHERE goodsid = #{goodsId} AND userid = #{userId}
+	</delete>
+	
+	<update id="updateGoodsNum" >
+		UPDATE cart SET quantity = #{goodsNum} WHERE goodsid = #{goodsId} AND userid = #{userId}
+	</update>
+	
+	<select id="confirmGoodsExist" resultType="Integer">
+		Select quantity FROM cart WHERE goodsid = #{goodsId} AND userid = #{userId} 
+	</select>
+	
+	
+	
+	
+	
+	
+</mapper>
